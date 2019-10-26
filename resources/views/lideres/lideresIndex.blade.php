@@ -1,25 +1,31 @@
-@extends('lideres.planta') 
-@section('cuerpo')
+@extends('layouts.index') 
+@section('tabla')
 
-<a href = "{{ route('lideres.create') }}" class="btn btn-succes"> AGREGAR LIDER</a> 
- <table class="table"> 
-    <thead>  
-      <tr>  <th>ID</th> <th>NOMBRE</th> <th>REGION</th> <th>ELEMENTO</th> <th>ACCIONES</th>    </tr>
-    </thead>  
-    <tbody>  
-        @foreach($lideres as $lider) 
-            <tr>  
-              <td>{{ $lider->id}}</td>              
-              <td>{{ $lider->nombre}}</td>
-              <td>{{ $lider->region}}</td>
-              <td>{{ $lider->elemento}}</td>
-              <td> 
-                 <a href="{{route('lideres.show',$lider->id)}}" class="btn btn-sm btn-info">VER DETALLE</a>
-              </td>
-            </tr>
-        @endforeach
-    </tbody>
+<div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
 
- </table>   
+<div class="row schedule-item">
+  <div class="col-md-2"><i>0</i></div>
+  <div class="col-md-10"> 
+    <h4>Nombre <span>  Region<span> </h4>
+    <p>Equipo monotype a usar.</p>
+  </div>
+</div>
+
+@foreach($lideres as $lider)
+<div class="row schedule-item">
+  <div class="col-md-2"><i>{{ $lider->id}}</i></div>
+  <div class="col-md-10">
+  <div class="speaker">
+  <a href="{{route('lideres.show',$lider->id)}}" >_VER</a>
+    </div>
+    <h4>{{ $lider->nombre}} <span> {{ $lider->region}}</span></h4>
+    <p>{{ $lider->elemento}}</p>
+  </div>  
+  </div>   
+@endforeach
+
+
+</div> 
 @endsection
  
+

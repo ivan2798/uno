@@ -35,7 +35,13 @@ class LiderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
+        $request->validate[( 
+            'nombre' => 'required|string|min:1|max:20',
+            'region' => 'required|string|min:1|max:20',
+            'elemento' => 'required|string|min:1|max:20'
+  
+          )]; 
         Lider::create($request->all()); 
         return redirect()->route('lideres.index');
     }
@@ -70,7 +76,13 @@ class LiderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Lider $lideres)
-    {
+    { 
+        $request->validate[( 
+            'nombre' => 'required|string|min:1|max:20',
+            'region' => 'required|string|min:1|max:20',
+            'elemento' => 'required|string|min:1|max:20'
+  
+          )]; 
         $lideres->nombre = $request->nombre; 
         $lideres->region = $request->region; 
         $lideres->elemento = $request->elemento; 

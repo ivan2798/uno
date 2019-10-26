@@ -9,7 +9,8 @@
        <td>{{ $lideres->id}}</td>              
        <td>{{ $lideres->nombre}}</td>
        <td>{{ $lideres->region}}</td>
-       <td>{{ $lideres->elemento}}</td>
+       <td>{{ $lideres->elemento}}</td> 
+       <!--<td>{{ $lideres->'nombre de la funcion en mi modelo belong'->nombre}} -->
        <td> 
             <a href="{{route('lideres.edit',$lideres->id)}}" class="btn btn-sm btn-warning">EDITAR</a> 
             <form action="{{route('lideres.destroy',$lideres->id)}}" method="POST">  

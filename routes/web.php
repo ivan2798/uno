@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
-Route::resource('/lideres','LiderController')->parameters(['lideres' => 'lideres']);
+Route::resource('/lideres','LiderController')->parameters(['lideres' => 'lideres']); 
+
+Route::resource('/jugadores','JugadorController')->parameters(['jugadores' => 'jugadores']);
 
 Auth::routes();
 
