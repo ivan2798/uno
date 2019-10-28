@@ -34,7 +34,9 @@
           <h3>LIDER</h3>
           <address>DEVA</address>
         </div>
-      </div>   
+      </div>    
+
+      </div>
   
  <div class="form"> 
     @if(isset($lideres))  
@@ -56,7 +58,8 @@
         <input type="text" name="elemento" value="{{$lideres->elemento ?? ''}}" class="form-control" id="elemento" placeholder="Elemento">
       </div> 
 
-      <div class="text-center"><button type="submit">ENVIAR</button></div>
+      <div class="text-center"><button type="submit">ENVIAR</button></div> 
+      </div>
     </form>
   
   </div>

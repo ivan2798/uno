@@ -7,7 +7,7 @@
 
    <div class="section-header">
       <h2>Registrarse para ser jugador</h2>
-      <p>Escoge la medalla que desses</p>
+      <p>Escoge la medalla que deseas</p>
     </div>
 
     <div class="row contact-info">
@@ -32,36 +32,42 @@
         <div class="contact-email">
           <i class="ion-ios-email-outline"></i>
           <h3>JUGADOR</h3>
-          <address>Gary</address>
+          <address>GARY</address>
         </div>
-      </div>   
+      </div>    
+
+      </div>
   
  <div class="form"> 
-    @if(isset($lideres))  
-      <form action="{{route('jugadores.update',$jugadores->id)}}" method="POST"  >   
-        <!--   {!!Form::model($jugadores,['route' => ['jugadores.update', $jugadores]]) !!}    -->  
+    @if(isset($jugadores))  
+      <form action="{{route('jugadores.update',$jugadores->id)}}" method="POST"  > 
       @method('PATCH')
     @else 
-      <form action="{{route('jugadores.store')}}" method="POST" >  
-        <!--   {!!Form::open(['route' => 'jugadores.store']) !!}    -->  
+      <form action="{{route('jugadores.store')}}" method="POST" > 
     @endif 
     @csrf
       <div class="form-row">
         <div class="form-group col-md-6">  
           <input type="text" name="nombre" value="{{$jugadores->nombre ?? ''}}" class="form-control" id="nombre" placeholder="Nombre">  
-          <!--   {!!Form::text('nombre',null,[class => $errors->has('nombre') ? 'form-control is-invalid' : 'form-control']) !!}    -->  
         </div>
         <div class="form-group col-md-6"> 
           <input type="text" name="region" value="{{$jugadores->region ?? ''}}" class="form-control" id="region" placeholder="Region">
-          <!--   {!!Form::text('region',null,[class => $errors->has('region') ? 'form-control is-invalid' : 'form-control']) !!}    -->  
         </div>
       </div>
       <div class="form-group">
         <input type="text" name="medalla" value="{{$jugadores->medalla ?? ''}}" class="form-control" id="medalla" placeholder="Medalla">
-          <!--   {!!Form::text('medalla',null,[class => $errors->has('medalla') ? 'form-control is-invalid' : 'form-control']) !!}    -->
       </div> 
+     
+           <select>  
+           @foreach($lideres as $lider) 
+              <option value="{{$jugadores->liders_id ?? ''}}">{{$lider->id}}</option> 
+            @endforeach
+           </select>
+     
 
-      <div class="text-center"><button type="submit">ENVIAR</button></div>
+
+      <div class="text-center"><button type="submit">ENVIAR</button></div> 
+      </div>
     </form>
   
   </div>
@@ -70,3 +76,7 @@
 </div>
 </section><!-- #contact -->
 @endsection 
+
+
+
+

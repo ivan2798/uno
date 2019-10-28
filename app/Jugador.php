@@ -8,7 +8,8 @@ class Jugador extends Model
 {
     protected $table = 'jugadors';  
     public $timestamps = false;
-    protected $fillable = ['nombre','region','medalla']; 
+    protected $fillable = ['nombre','region','medalla','liders_id']; 
+    
     public function lider() 
     { 
       //un jugador pertenece a un lider 

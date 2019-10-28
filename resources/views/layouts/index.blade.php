@@ -92,7 +92,8 @@
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
             <a href = "{{ route('lideres.create') }}" class="btn btn-succes"> AGREGAR LIDER</a>  
-            <a href = "{{ route('jugadores.create')}}" class="btn btn-succes">AGREGAE JUGADOR</a>
+            <a href = "{{ route('jugadores.create')}}" class="btn btn-succes">AGREGAR JUGADOR</a> 
+            <a href = "" class="btn btn-succes">AGREGAR GIMNASIO</a>
           </li>
         </ul>
 

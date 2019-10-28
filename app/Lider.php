@@ -9,9 +9,10 @@ class Lider extends Model
     protected $table = 'liders';  
     public $timestamps = false;
     protected $fillable = ['nombre','region','elemento']; 
+    
     public function jugadores() 
     { 
-       // cada lider va a tener alumnos 
+       // cada lider va a tener jugadores
        return $this->hasMany('App\Jugador');
     }  
 

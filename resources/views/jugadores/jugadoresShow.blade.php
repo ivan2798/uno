@@ -1,31 +1,43 @@
-@extends('lideres.planta') 
-@section('cuerpo')
-<a href="{{route('jugadores.index')}}" class="btn btn-default btn-sm">LISTADO DE PROGRAMAS</a> 
-<table class="table"> 
-   <thead>  
-   <tr>  <th>ID</th> <th>NOMBRE</th> <th>REGION</th> <th>MEDALLA</th> <th>ACCIONES</th>    </tr>
-   </thead>  
-   <tbody>  
-       <td>{{ $jugadores->id}}</td>              
-       <td>{{ $jugadores->nombre}}</td>
-       <td>{{ $jugadores->region}}</td>
-       <td>{{ $jugadores->elemento}}</td>
-       <td> 
-            <a href="{{route('jugadores.edit',$jugadores->id)}}" class="btn btn-sm btn-warning">EDITAR</a> 
-            <form action="{{route('jugadores.destroy',$jugadores->id)}}" method="POST">  
-                @csrf
-                @method('DELETE') 
-                
-                <button type = "submit" class = "btn  btn-danger">ELIMINAR</button>
-            </form>
-       </td> 
-       <ul>  
-         <!-- @foreach($jugadores->lideres as $lider) 
-             <li>{{ $lider->nombre}}</li> 
-          @endforeach 
-           -->
-       </ul>
-   </tbody>
-</table> 
+@extends('layouts.show') 
+@section('tabla') 
+<div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+  <div class="row schedule-item">
+              <div class="col-md-2"><i>0</i></div>
+              <div class="col-md-6">  
+			  <div class="speaker">
+                  <a href = "">_VER</a>
+                </div>
+                <h4>Nombre <span>  Region<span> </h4>
+                <p>Medalla a competir</p>
+              </div> 
+			  <div>  
+			  <div class="col-md-4">  
+                <p>OPCIONES</p>
+              </div> 
+			</div>
+    </div>   
 
-@endsection
+
+    <div class="row schedule-item">
+              <div class="col-md-2"><i>{{ $jugadores->id}}</i></div>
+              <div class="col-md-6">  
+                <h4>{{ $jugadores->nombre}}<span>  {{ $jugadores->region}}<span> </h4>
+                <p>{{ $jugadores->medalla}}</p>
+              </div> 
+			  <div>  
+			  <div class="col-md-4">  
+                <a href="{{route('jugadores.edit',$jugadores->id)}}" class="btn btn-sm btn-warning">EDITAR</a> 
+                <form action="{{route('jugadores.destroy',$jugadores->id)}}" method="POST">  
+                    @csrf
+                    @method('DELETE') 
+                    
+                    <button type = "submit" class = "btn  btn-danger">ELIMINAR</button>
+                </form>
+              </div> 
+			</div>
+            </div>
+
+
+</div> 
+@endsection 
+

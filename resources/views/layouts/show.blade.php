@@ -9,23 +9,23 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{asset('sust/img/favicon.png') }}" rel="icon">
+  <link href="{{asset('sust/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{asset('sust/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/venobox/venobox.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="{{asset('sust/lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{asset('sust/lib/animate/animate.min.css') }}" rel="stylesheet">
+  <link href="{{asset('sust/lib/venobox/venobox.css') }}" rel="stylesheet">
+  <link href="{{asset('sust/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="{{asset('sust/css/style.css') }}" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: TheEvent
@@ -39,45 +39,48 @@
 
   
 
+  
   <!--==========================
-    Intro Section
-  ============================-->
-  <section id="intro">
-    <div class="intro-container wow fadeIn">
-      <h1 class="mb-4 pb-0">TORNEO<br><span>MUNDIAL</span> POKEMON</h1>
-      <p class="mb-4 pb-0">10-12 DICIEMBRE, UNOVA</p>
-      <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
-        data-autoplay="true"></a>
-      <a href="#about" class="about-btn scrollto">EV</a>
-    </div>
-  </section>
-
-  <main id="main">
-
-    <!--==========================
-      About Section
+      F.A.Q Section
     ============================-->
-    <section id="about">
+    <section id="faq" class="wow fadeInUp">
+
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h2>Sobre el evento</h2>
-            <p>Sera el mundial de pokemon competitivo en categoria individual, dobles y por equipo donde
-			se buscarara al ganador que obtenga el trofeo por otro año</p>
-          </div>
-          <div class="col-lg-3">
-            <h3>Donde</h3>
-            <p>Unova, centro</p>
-          </div>
-          <div class="col-lg-3">
-            <h3>Cuando</h3>
-            <p>Lunes a viernes<br>10-12 Diciebre</p>
+
+        <div class="section-header">
+          <h2>PREGUNTAS </h2>
+        </div>
+
+		
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+              <ul id="faq-list">
+
+                <li>
+                  <a data-toggle="collapse" class="collapsed" href="{{asset('sust/#faq1') }}">Que tiers manejara el Torneo? <i class="fa fa-minus-circle"></i></a>
+                  <div id="{{asset('sust/faq1') }}" class="collapse" data-parent="#faq-list">
+                    <p>
+                      Se aceptan las tiers OU, UU y RU
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="{{asset('sust/#faq2') }}" class="collapsed">Habra sleep-cl y change-cl como las clasicas reglas de smogon? <i class="fa fa-minus-circle"></i></a>
+                  <div id="{{asset('sust/faq2') }}" class="collapse" data-parent="#faq-list">
+                    <p> 
+			 	                	Se seguiran todas las reglas de smogon(incluido dichas reglas)
+                    </p>
+                  </div>
+                </li>
+      
+              </ul>
           </div>
         </div>
-      </div>
-    </section>
 
- 
+      </div>
+
+    </section>
 
     <!--==========================
       Schedule Section
@@ -91,13 +94,7 @@
 
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">EVENTO1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">EVENTO2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">EVENTO3</a>
+            <a href = "{{route('lideres.index')}}" class="btn btn-succes">LISTA</a>
           </li>
         </ul>
 
@@ -113,27 +110,29 @@
      </div>
           <!-- End Schdule Day 1 -->
     </section> 
-  </main>
+  
+
+  
 
 
-  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+  <a href="{{asset('#')}}" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
   <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/venobox/venobox.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="{{asset('sust/lib/jquery/jquery.min.js') }}"></script>
+  <script src="{{asset('sust/lib/jquery/jquery-migrate.min.js') }}"></script>
+  <script src="{{asset('sust/lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{asset('sust/lib/easing/easing.min.js') }}"></script>
+  <script src="{{asset('sust/lib/superfish/hoverIntent.js') }}"></script>
+  <script src="{{asset('sust/lib/superfish/superfish.min.js') }}"></script>
+  <script src="{{asset('sust/lib/wow/wow.min.js') }}"></script>
+  <script src="{{asset('sust/lib/venobox/venobox.min.js') }}"></script>
+  <script src="{{asset('sust/lib/owlcarousel/owl.carousel.min.js') }}"></script>
 
   <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+  <script src="{{asset('sust/contactform/contactform.js') }}"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+  <script src="{{ asset('sust/js/main.js') }}"></script>
 </body>
 
 </html>

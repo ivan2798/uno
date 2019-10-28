@@ -38,13 +38,7 @@ class JugadorController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate[( 
-          'nombre' => 'required|string|min:1|max:20',
-          'region' => 'required|string|min:1|max:20',
-          'medalla' => 'required|string|min:1|max:20', 
-          'liders_id' => 'required|integer|min:1'
-
-        )]; 
+       
         //otra forma, le poaso modelo con la info
         //$jugadores = JUgador::find()$request->
         Jugador::create($request->all()); 
@@ -82,13 +76,7 @@ class JugadorController extends Controller
      */
     public function update(Request $request, Jugador $jugadores)
     { 
-        $request->validate[( 
-            'nombre' => 'required|string|min:1|max:20',
-            'region' => 'required|string|min:1|max:20',
-            'medalla' => 'required|string|min:1|max:20', 
-            'liders_id' => 'required|integer|min:1'
-  
-          )]; 
+       
         $jugadores->nombre = $request->nombre; 
         $jugadores->region = $request->region; 
         $jugadores->medalla = $request->medalla; 
