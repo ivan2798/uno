@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Jugador; 
-use App\Lider;
+use App\Lider; 
+use App\Gimnasio;
 use Illuminate\Http\Request;
 
 class JugadorController extends Controller
@@ -26,8 +27,9 @@ class JugadorController extends Controller
      */
     public function create()
     { 
-        $lideres = Lider::all();
-        return view('jugadores.jugadoresForm',compact('lideres'));
+        $lideres = Lider::all(); 
+        $gimnasios = Gimnasio::pluck('id','nombre','hora','vs');
+        return view('jugadores.jugadoresForm',compact('lideres', ['gimasios'=>$gimnasios]));
     }
 
     /**

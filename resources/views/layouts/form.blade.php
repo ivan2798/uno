@@ -13,7 +13,8 @@
   <link href="{{ asset('sust/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/css/select2.min.css" rel="stylesheet" />
 
   <!-- Bootstrap CSS File -->
   <link href="{{ asset('sust/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -87,7 +88,7 @@
   <script src="{{asset('sust/lib/wow/wow.min.js') }}"></script>
   <script src="{{asset('sust/lib/venobox/venobox.min.js') }}"></script>
   <script src="{{asset('sust/lib/owlcarousel/owl.carousel.min.js') }}"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/js/select2.min.js"></script>
   <!-- Contact Form JavaScript File -->
   <script src="{{asset('sust/contactform/contactform.js') }}"></script>
 

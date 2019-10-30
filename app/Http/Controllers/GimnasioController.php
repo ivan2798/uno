@@ -14,8 +14,8 @@ class GimnasioController extends Controller
      */
     public function index()
     {
-        $jugadores = Jugador::all();  
-        return view('jugadores.jugadoresIndex', compact('jugadores'));
+        $gimnasios = Gimnasio::all(); 
+        return view('gimnasios.gimnasiosIndex',compact('gimnasios'))
     }
 
     /**
@@ -24,9 +24,10 @@ class GimnasioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        $lideres = Lider::all();
-        return view('jugadores.jugadoresForm',compact('lideres'));
+    { 
+        
+        $gimnasios = Gimnasio::all();
+        return view('gimnasios.gimnasiosForm',compact('gimnasios'));
     }
 
     /**
@@ -37,17 +38,11 @@ class GimnasioController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate[( 
-            'nombre' => 'required|string|min:1|max:20',
-            'region' => 'required|string|min:1|max:20',
-            'medalla' => 'required|string|min:1|max:20', 
-            'liders_id' => 'required|integer|min:1'
-  
-          )]; 
+        
           //otra forma, le poaso modelo con la info
           //$jugadores = JUgador::find()$request->
-          Jugador::create($request->all()); 
-          return redirect()->route('jugadores.index');
+          Gimnasio::create($request->all()); 
+          return redirect()->route('gimnasios.index');
     }
 
     /**
@@ -58,7 +53,7 @@ class GimnasioController extends Controller
      */
     public function show(Gimnasio $gimnasio)
     {
-        return view('jugadores.jugadores.Show',compact('jugadores'));
+        return view('gimnasios.gimnasiosShow',compact('gimnasios'));
     }
 
     /**
@@ -69,7 +64,7 @@ class GimnasioController extends Controller
      */
     public function edit(Gimnasio $gimnasio)
     {
-        return view('jugadores.jugadoresForm',compact('jugadores'));
+        return view('gimnasios.gimnasiosForm',compact('gimnasios'));
     }
 
     /**
@@ -81,19 +76,12 @@ class GimnasioController extends Controller
      */
     public function update(Request $request, Gimnasio $gimnasio)
     {
-        $request->validate[( 
-            'nombre' => 'required|string|min:1|max:20',
-            'hora' => 'required|integer|min:1|max:20',
-            'medalla' => 'required|integer|min:1|max:20', 
-    
-  
-          )]; 
-        $jugadores->nombre = $request->nombre; 
-        $jugadores->region = $request->region; 
-        $jugadores->medalla = $request->medalla; 
+        $gimnasios->nombre = $request->nombre; 
+        $gimnasios->hora = $request->hora; 
+        $gimnasios->vs = $request->vs; 
 
-        $lideres->save(); 
-        return redirect()->route('jugadores.show',$jugadores->id);
+        $gimnasios->save(); 
+        return redirect()->route('gimnasios.show',$gimnasios->id);
     }
 
     /**
@@ -104,7 +92,7 @@ class GimnasioController extends Controller
      */
     public function destroy(Gimnasio $gimnasio)
     {
-        $jugadores->delete(); 
-        return redirect()->route('jugadores.index');
+        $gimnasios->delete(); 
+        return redirect()->route('gimnasios.index');
     }
 }

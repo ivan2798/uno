@@ -58,11 +58,18 @@
         <input type="text" name="medalla" value="{{$jugadores->medalla ?? ''}}" class="form-control" id="medalla" placeholder="Medalla">
       </div> 
      
-           <select>  
+           <select name="liders_id" class="form-control">  
            @foreach($lideres as $lider) 
-              <option value="{{$jugadores->liders_id ?? ''}}">{{$lider->id}}</option> 
+              <option value="{{$lider->id}}">{{$lider->nombre}}</option> 
             @endforeach
-           </select>
+           </select> 
+
+           <select name="liders_id" class="form-control gimnasios">  
+           @foreach($lideres as $lider) 
+              <option value="{{$lider->id}}">{{$lider->nombre}}</option> 
+            @endforeach
+           </select> 
+
      
 
 

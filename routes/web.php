@@ -19,6 +19,8 @@ Route::resource('/lideres','LiderController')->parameters(['lideres' => 'lideres
 
 Route::resource('/jugadores','JugadorController')->parameters(['jugadores' => 'jugadores']);
 
+Route::resource('/gimnasios','GimnasioController')->parameters(['gimnasios' => 'gimnasios']); 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
